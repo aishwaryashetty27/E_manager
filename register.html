@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Registration</title>
+  <style>
+    body {
+      background-image: url("hall6.jpg");
+      background-size: cover;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      margin-top: 100px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    form {
+      margin-top: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    select {
+      width: 90%;
+      padding: 10px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    p {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Registration</h2>
+    <form method="POST" action="register.php">
+      <label for="userType">Select User Type:</label>
+      <select name="userType" id="userType">
+        <option>-SELECT-</option>
+        <option value="manager">Manager</option>
+        <option value="user">User</option>
+      </select>
+      <br><br>
+
+      <label for="userName">Username:</label>
+      <input type="text" name="userName" required><br><br
+    
+      <label for="phoneNumber">Phone Number:</label>
+      <input type="number" name="phoneNumber" pattern="[0-9]{10}" title="Please enter a 10-digit phone number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" required><br><br>
+
+      
+    
+      <label for="gmail">Gmail ID:</label>
+      <input type="text" name="gmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="abc@gmail.com" required><br><br>
+
+      <label for="password">Password:</label>
+      <input type="password" name="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" 
+        title="Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, one digit, and one special character." 
+        required><br><br>
+
+      <input type="submit" value="Register">
+    </form>
+
+    <p>Already a user? <a href="login.php">Login</a></p>
+  </div>
+</body>
+</html>
